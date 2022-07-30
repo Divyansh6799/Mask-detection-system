@@ -47,12 +47,12 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 
 def mask_detect():
 # load our serialized face detector model from disk
-    prototxtPath = r"D:\Mask-Detector-system\face-detect-lib\deploy.prototxt"
-    weightsPath = r"D:\Mask-Detector-system\face-detect-lib\res10_300x300_ssd_iter_140000.caffemodel"
+    prototxtPath = r"face-detect-lib\deploy.prototxt"
+    weightsPath = r"face-detect-lib\res10_300x300_ssd_iter_140000.caffemodel"
     faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
     # load the face mask detector model from disk
-    maskNet = load_model("D:\Mask-Detector-system\mask_detector.model")
+    maskNet = load_model("mask_detector.model")
 
     # initialize the video stream and startup voice
     engine = pyttsx3.init()
