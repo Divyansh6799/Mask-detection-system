@@ -61,7 +61,7 @@ def mask_detect():
     engine.say("please wait! the mask detection system is starting")
     engine.runAndWait()
     print("[INFO] starting video stream...")
-    vs = VideoStream(src=0).start()
+    vs = VideoStream(0).start()
 
     # loop over the frames from the video stream
 
@@ -91,7 +91,7 @@ def mask_detect():
             cv2.rectangle(frame, (startX, startY), (endX, endY), color, 2)
         
         cv2.imshow("Mask Detection System ", frame)
-        
+
         key = cv2.waitKey(1) & 0xFF
         if key == ord("q"):
             break
